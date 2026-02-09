@@ -1,9 +1,18 @@
+/**
+ * Représente un terrain de badminton pouvant accueillir un match.
+ */
 export default class Terrain {
   constructor(numeroTerrain) {
     this.joueurs = [];
     this.numeroTerrain = numeroTerrain;
   }
 
+  /**
+   * Crée un match simple (1v1) sur le terrain.
+   * Refuse si le terrain est déjà occupé.
+   * @param {Joueur} joueur1
+   * @param {Joueur} joueur2
+   */
   creerMatchSimple(joueurs1, joueurs2) {
     if (this.joueurs.length > 0) {
       console.log("Le terrain est déjà occupé.");
@@ -17,6 +26,13 @@ export default class Terrain {
     joueurs2.ajouterMatch();
   }
 
+  /**
+   * Crée un match double (2v2) sur le terrain.
+   * Met à jour le nombre de matchs et les partenaires.
+   * Refuse si le terrain est déjà occupé.
+   * @param {Joueur[]} equipe1 - Tableau de 2 joueurs
+   * @param {Joueur[]} equipe2 - Tableau de 2 joueurs
+   */
   creerMatchDouble(equipe1, equipe2) {
     if (this.joueurs.length > 0) {
       console.log("Le terrain est déjà occupé.");
@@ -37,6 +53,9 @@ export default class Terrain {
     }
   }
 
+  /**
+   * Libère le terrain en supprimant tous les joueurs du match.
+   */
   terminerMatch() {
     this.joueurs = [];
   }
