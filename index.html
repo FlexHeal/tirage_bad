@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <input
+      type="number"
+      name="nbTerrains"
+      id="nbTerrains"
+      placeholder="Nombre de terrains"
+      value="4"
+      class="form-control"
+    />
+
+    <div id="modals">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#ajouterJoueur"
+      >
+        Ajouter un joueur
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="ajouterJoueur"
+        tabindex="-1"
+        aria-labelledby="ajouterJoueurLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ajouterJoueurLabel">
+                Ajouter un joueur
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <input
+                type="text"
+                name="nomJoueur"
+                id="nomJoueurAjout"
+                placeholder="Nom du joueur"
+                class="form-control mb-2"
+              />
+              <select name="sexeJoueur" id="sexeJoueur" class="form-select">
+                <option value="H">Homme</option>
+                <option value="F">Femme</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fermer
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="modalAjouterJoueur"
+              >
+                Valider
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#enleverJoueur"
+      >
+        Enlever un joueur
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="enleverJoueur"
+        tabindex="-1"
+        aria-labelledby="enleverJoueurLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="enleverJoueurLabel">
+                Enlever un joueur
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <input
+                type="text"
+                name="nomJoueur"
+                id="nomJoueurSuppression"
+                placeholder="Nom du joueur"
+                class="form-control mb-2"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fermer
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="modalSupprimerJoueur"
+              >
+                Valider
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="terrains"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
