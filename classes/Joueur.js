@@ -10,15 +10,17 @@ export default class Joueur {
   static fromJSON(data) {
     const j = new Joueur(data.nom, data.sexe);
     j.nbMatchs = data.nbMatchs;
+    j.score = data.score;
+    j.partenaires = data.partenaires.map(p => Joueur.fromJSON(p));
     return j;
   }
 
   ajouterScore() {
-    this.score += 1;
+    this.score++;
   }
 
   ajouterMatch() {
-    this.nbMatchs += 1;
+    this.nbMatchs++;
   }
 
   ajouterPartenaire(partenaire) {

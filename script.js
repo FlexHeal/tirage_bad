@@ -3,6 +3,8 @@ import Joueur from "./classes/joueur.js";
 
 const joueur1 = new Joueur("Alice");
 
+
+// ========= FONCTIONS PRINCIPALES =========
 function creerTerrains(nbTerrains) {
   let Terrains = [];
   for (let i = 1; i <= nbTerrains; i++) {
@@ -23,6 +25,8 @@ function enleverJoueur(nom) {
   console.log(`Joueur ${nom} supprimé avec succès.`);
 }
 
+
+// ========= PROGRAMME PRINCIPALES =========
 let nbTerrainsInput = document.getElementById("nbTerrains");
 nbTerrainsInput.addEventListener("change", (event) => {
   creerTerrains(event.target.value);
