@@ -80,7 +80,9 @@ function genererMatchs(joueurs) {
   // Crée ou recrée les terrains nécessaires
   let terrains = creerTerrains(repartition.nbTerrains);
 
-  console.log(`Répartition : ${repartition.nbDoubles} doubles, ${repartition.nbSimples} simples, ${repartition.nbTerrains} terrains nécessaires.`);
+  console.log(
+    `Répartition : ${joueurs.length} joueurs => ${repartition.nbDoubles} doubles, ${repartition.nbSimples} simples, ${repartition.nbTerrains} terrains nécessaires.`,
+  );
 
   return terrains;
 }
@@ -89,6 +91,7 @@ function genererMatchs(joueurs) {
 let joueurs = [1, 2, 3, 4, 5, 6, 7];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Ecouteur pour ajouter un joueur
   let modalAjouterJoueur = document.getElementById("modalAjouterJoueur");
   modalAjouterJoueur.addEventListener("click", () => {
     // Récupérer les valeurs du formulaire
@@ -110,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sexeJoueur").value = "";
   });
 
+  // Ecouteur pour supprimer un joueur
   let modalSupprimerJoueur = document.getElementById("modalSupprimerJoueur");
   modalSupprimerJoueur.addEventListener("click", () => {
     // Récupérer le nom du joueur à supprimer
@@ -128,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("nomJoueurSuppression").value = "";
   });
 
+  // Générer les matchs lorsque le bouton est cliqué
   document.getElementById("genTerrains").addEventListener("click", () => {
     console.log("Matchs générés avec les joueurs disponibles.");
     genererMatchs(joueurs);

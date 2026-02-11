@@ -2,12 +2,21 @@
  * Représente un joueur avec score, historique de matchs et partenaires.
  */
 export default class Joueur {
+  hommes = 0; // Compteur statique pour les joueurs masculins
+  femmes = 0; // Compteur statique pour les joueurs féminins
+
   constructor(nom, sexe) {
     this.nom = nom;
     this.sexe = sexe;
     this.partenaires = [];
     this.score = 0;
     this.nbMatchs = 0;
+    if (sexe === "H") {
+      Joueur.hommes++;
+    }
+    if (sexe === "F") {
+      Joueur.femmes++;
+    }
   }
 
   /**

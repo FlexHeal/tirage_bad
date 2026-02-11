@@ -59,4 +59,17 @@ export default class Terrain {
   terminerMatch() {
     this.joueurs = [];
   }
+
+  /**
+   * Génère le HTML pour afficher le terrain et les joueurs présents. 
+   */
+  genererHTML() {
+    // A faire
+    if (this.joueurs.length === 0) {
+      return; // Ne rien faire si le terrain est vide
+    }
+    const terrainContainer = document.getElementById("terrains");
+
+    return;
+  }
 }
